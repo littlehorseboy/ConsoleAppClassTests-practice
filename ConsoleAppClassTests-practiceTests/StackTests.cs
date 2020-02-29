@@ -10,15 +10,48 @@ namespace ConsoleAppClassTests_practice.Tests
     public class StackTests
     {
         [TestMethod()]
-        public void PushTest()
+        public void StackPushPopIntTest()
         {
-            Assert.Fail();
+            // arrange
+            Stack s = new Stack();
+
+            // act
+            s.Push(1);
+            s.Push(10);
+            s.Push(100);
+
+            // assert
+            Assert.AreEqual(100, s.Pop());
+            Assert.AreEqual(10, s.Pop());
+            Assert.AreEqual(1, s.Pop());
         }
 
         [TestMethod()]
-        public void PopTest()
+        public void StackPushPopStringTest()
         {
-            Assert.Fail();
+            // arrange
+            Stack s = new Stack();
+
+            // act
+            s.Push("one");
+            s.Push("two");
+            s.Push("three");
+
+            // assert
+            Assert.AreEqual("three", s.Pop());
+            Assert.AreEqual("two", s.Pop());
+            Assert.AreEqual("one", s.Pop());
+        }
+
+        [ExpectedException(typeof(InvalidOperationException))]
+        [TestMethod()]
+        public void StackPopInvalidOperationException()
+        {
+            // arrange
+            Stack s = new Stack();
+
+            // act
+            s.Pop();
         }
     }
 }
