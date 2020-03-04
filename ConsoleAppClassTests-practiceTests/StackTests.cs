@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ConsoleAppClassTests_practice.Tests
 {
-    [TestClass()]
+    //[TestClass()]
     public class StackTests
     {
         [TestMethod()]
