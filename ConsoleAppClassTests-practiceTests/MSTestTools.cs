@@ -9,6 +9,10 @@ namespace ConsoleAppClassTests_practiceTests
     [TestClass()]
     public class MSTestTools
     {
+        /**
+         * 測試指定的值是否相等，說明上還寫著不同型態的數值會視為不相等
+         * 不過倒還是有可以 pass 的情況
+         */
         [TestMethod()]
         public void AreEqual()
         {
@@ -19,19 +23,28 @@ namespace ConsoleAppClassTests_practiceTests
             Assert.AreEqual(1, 1.0m);
         }
 
+        /**
+         * 測試指定的值是否『不』相等
+         */
         [TestMethod()]
         public void AreNotEqual()
         {
             Assert.AreNotEqual(1, 2);
-            Assert.AreNotEqual(new[] { 1, 2 }, new[] { 1, 2 });
+            Assert.AreNotEqual("one", "two");
         }
 
+        /**
+         * 測試指定的物件是否參照『不同』物件
+         */
         [TestMethod()]
         public void AreNotSame()
         {
             Assert.AreNotSame(new[] { 1, 2 }, new[] { 1, 2 });
         }
 
+        /**
+         * 測試指定的物件是否參照『相同』物件
+         */
         [TestMethod()]
         public void AreSame()
         {
@@ -41,6 +54,9 @@ namespace ConsoleAppClassTests_practiceTests
 
         // Assert.Equals(1, 1);
 
+        /**
+         * 擲回 AssertFailedException
+         */
         [TestMethod()]
         public void Fail()
         {
@@ -54,12 +70,19 @@ namespace ConsoleAppClassTests_practiceTests
             }
         }
 
+        /**
+         * 擲回 AssertInconclusiveException
+         * 一個沒有定論，介於有斷言成功與沒有斷言成功之間，沒啦，他其實是『跳過』
+         */
         [TestMethod()]
         public void Inconclusive()
         {
             Assert.Inconclusive();
         }
 
+        /**
+         * 測試指定的條件是否為 false
+         */
         [TestMethod()]
         public void IsFalse()
         {
