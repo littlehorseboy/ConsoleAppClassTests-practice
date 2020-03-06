@@ -90,18 +90,27 @@ namespace ConsoleAppClassTests_practiceTests
             Assert.IsFalse(false);
         }
 
+        /**
+         * 測試指定的物件是否為預期類型的執行個體
+         */
         [TestMethod()]
         public void IsInstanceOfType()
         {
             Assert.IsInstanceOfType(1, typeof(int));
         }
 
+        /**
+         * 測試指定的物件是否不是錯誤類型的執行個體
+         */
         [TestMethod()]
         public void IsNotInstanceOfType()
         {
             Assert.IsNotInstanceOfType(1, typeof(string));
         }
 
+        /**
+         * 測試指定的物件是否為非 null
+         */
         [TestMethod()]
         public void IsNotNull()
         {
@@ -109,12 +118,18 @@ namespace ConsoleAppClassTests_practiceTests
             Assert.IsNotNull(false);
         }
 
+        /**
+         * 測試指定的物件是否為 null
+         */
         [TestMethod()]
         public void IsNull()
         {
             Assert.IsNull(null);
         }
 
+        /**
+         * 測試指定的條件是否為 true
+         */
         [TestMethod()]
         public void IsTrue()
         {
@@ -125,6 +140,9 @@ namespace ConsoleAppClassTests_practiceTests
         // Assert.ReferenceEquals("1", "1");
         // Assert.ReplaceNullChars("1");
 
+        /**
+         * 測試委派 action 所指定的程式碼會擲回 T 類型的確切指定例外狀況
+         */
         [TestMethod()]
         public void ThrowsException()
         {
